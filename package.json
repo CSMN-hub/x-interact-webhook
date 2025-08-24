@@ -1,13 +1,13 @@
 {
   "name": "x-interact-webhook",
   "version": "1.0.0",
-  "description": "Webhook for the X Interaction App",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "twitter-api-v2": "^1.15.2"
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
   }
 }
