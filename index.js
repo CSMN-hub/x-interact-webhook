@@ -1,28 +1,3 @@
-// Webhook endpoint for Twitter API integration
-const express = require('express');
-const TwitterApi = require('twitter-api-v2').default;
-
-const app = express();
-app.use(express.json());
-
-const twitterClient = new TwitterApi({
-  appKey: process.env.TWITTER_API_KEY,
-  appSecret: process.env.TWITTER_API_SECRET,
-  accessToken: process.env.TWITTER_ACCESS_TOKEN,
-  accessSecret: process.env.TWITTER_ACCESS_SECRET,
-});
-
-// Fetch tweets endpoint
-app.post('/fetch-tweets', async (req, res) => {
-  // ... (rest of the code is the same)
-});
-
-// Post reply endpoint  
-app.post('/post-reply', async (req, res) => {
-  // ... (rest of the code is the same)
-});
-
-app.listen(3001, () => console.log('Twitter webhook running on port 3001'));
 // index.js
 // Dependencies: npm i express cors twitter-api-v2
 const express = require('express');
@@ -129,3 +104,19 @@ app.post('/post-reply', async (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Webhook server listening on ${PORT}`));
+package.json
+
+{
+  "name": "x-interact-webhook",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "twitter-api-v2": "^1.16.2"
+  }
+}
